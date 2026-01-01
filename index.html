@@ -4,17 +4,58 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tic-Tac-Toe</title>
+    <style>
+        body{
+            background-color: #47476b
+        }
+
+        .container {
+            background: #a3a3c2;
+            padding: 30px;
+            width: 300px;
+            margin: auto;
+            margin-top: 100px;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            border: 1px solid black;
+            border-radius: 8px;
+        }
+        input {
+            display: block;
+            margin: 10px 0;
+            padding: 10px;
+            width: 300px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        .btn {
+            padding: 10px 20px;
+            background-color: #28a745;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+              margin-top: 10px;
+        }
+        button:hover {
+            background-color: #218838;
+        }
+        </style>
 </head>
 <body>
+    <div class="container">
     <h1>Tic-Tac-Toe</h1>
-     <div class="container">
+     <div class="input-box" >
         <input type="text" id="p1name" class="p1name" placeholder="Player 1 Name">
         <input type="text" id="p1symbol" class="p1symbol" placeholder="Player 1 Symbol (e.g. X)" >
 
         <input type="text" id="p2name" class="p2name" placeholder="Player 2 Name">
         <input type="text" id="p2symbol" class="p2symbol" placeholder="Player 2 Symbol (e.g.O)" >
 
-        <button onclick="startGame()">Start Game</button>
+        <button class="btn" onclick="startGame()">Start Game</button>
+    </div>
     </div>
 </body>
 </html>
