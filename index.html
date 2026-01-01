@@ -55,7 +55,51 @@
         <input type="text" id="p2symbol" class="p2symbol" placeholder="Player 2 Symbol (e.g.O)" >
 
         <button class="btn" onclick="startGame()">Start Game</button>
+     </div>
+
+      <div class="game-section" style="display: none;">
+    <p id="text-current-player">currentPlayer:</p>
+    <div class="Tic-Tac-Toe-container" id="board"></div>
+    <button type="button" onclick="resetGame()">ResetGame</button>
     </div>
     </div>
+    <script>
+    let player1 = "";
+    let player2 = "";
+    let symbol1 = "";
+    let symbol2 = "";
+    let currentPlayer = "";
+    let currentSymbol = "";
+    const board = [-1,-1,-1,-1,-1,-1,-1,-1,-1];
+
+    const boardElement = document.getElementById("board");
+    const currentPlayerText = document.getElementById("text-current-player");
+
+     function startGame() {
+        player1 = document.getElementById("p1name").value.trim();
+        player2 = document.getElementById("p2name").value.trim();
+        symbol1 = document.getElementById("p1symbol").value.trim();
+        symbol2 = document.getElementById("p2symbol").value.trim();
+        if (!player1 || !player2 || !symbol1 || !symbol2) {
+            alert("Please enter all details!");
+            return;
+        }
+
+        if (symbol1 === symbol2) {
+            alert("Players cannot use the same symbol!");
+            return;
+        }
+
+        currentPlayer = player1;
+        currentSymbol = symbol1;
+
+        document.querySelector(".input-box").style.display = "none";
+        document.querySelector(".game-section").style.display = "block";
+
+        renderBoard();
+    }
+
+
+    </script>
 </body>
 </html>
